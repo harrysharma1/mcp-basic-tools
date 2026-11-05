@@ -7,7 +7,7 @@ import json
 import random
 import uuid
 from zoneinfo import ZoneInfo
-from urllib.parse import quote_plus, unquote_plus
+from urllib.parse import quote, unquote 
 
 from fastmcp import FastMCP
 mcp = FastMCP("Basic Tools")
@@ -36,9 +36,9 @@ def convert_encoding(text: str, operation: str):
         case "base64_to_text":
             return base64.b64decode(text).decode()
         case "url_encode":
-            return quote_plus(text)
+            return quote(text)
         case "url_decode":
-            return unquote_plus(text)
+            return unquote(text)
         case "html_encode":
             return html.escape(text)
         case "html_decode":
